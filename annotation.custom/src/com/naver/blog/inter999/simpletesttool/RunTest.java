@@ -50,6 +50,7 @@ public class RunTest {
 			System.err.println("USE : RunTest [targetClass] [TestGroup] or null");
 			System.err.println("EX : RunTest com.naver.blog.inter999.math.test.TestCalculator min");
 			System.exit(0);
+			// 수정 commit (push) 테스트
 		}
 		String testGroup = "";
 		if (args.length == 2) {
