@@ -30,14 +30,14 @@ public class RunTest {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public static List<Object[]> getProvider(Object targetObject,
 			String providerName) throws IllegalArgumentException,
 			IllegalAccessException, InvocationTargetException {
 		List<Object[]> providerData = null;
 		for (Method m : targetObject.getClass().getMethods()) {
 			if (m.isAnnotationPresent(DataProvider.class)) {
-				if (((DataProvider) m.getAnnotation(DataProvider.class)).name()
-						.equals(providerName)) {
+				if (((DataProvider) m.getAnnotation(DataProvider.class)).name().equals(providerName)) {
 					providerData = (List<Object[]>) m.invoke(targetObject);
 				}
 			}
@@ -47,10 +47,9 @@ public class RunTest {
 
 	public static void main(String[] args) throws Exception {
 		if (args.length < 1) {
-			System.err
-					.println("USE : RunTest [targetClass] [TestGroup] or null");
-			System.err
-					.println("EX : RunTest com.naver.blog.inter999.math.test.TestCalculator min");
+			System.err.println("USE : RunTest [targetClass] [TestGroup] or null");
+			System.err.println("EX : RunTest com.naver.blog.inter999.math.test.TestCalculator min");
+			System.exit(0);
 		}
 		String testGroup = "";
 		if (args.length == 2) {
