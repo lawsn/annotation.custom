@@ -51,6 +51,7 @@ public class RunTest {
 			System.err.println("EX : RunTest com.naver.blog.inter999.math.test.TestCalculator min");
 			System.exit(0);
 			// 수정 commit (push) 테스트
+			// 2013-04-05 HANA TEST
 		}
 		String testGroup = "";
 		if (args.length == 2) {
